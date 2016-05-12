@@ -29,6 +29,9 @@ RUN mkdir /orientdb && \
   && rm orientdb-community-$ORIENTDB_VERSION.tar.gz \
   && rm -rf /orientdb/databases/*
 
+COPY hazelcast.xml /orientdb/config/
+COPY hazelcast-kubernetes-discovery-0.9.3-SNAPSHOT.jar /orientdb/lib/
+COPY dnsjava-2.1.7.jar /orientdb/lib/
 
 ENV PATH /orientdb/bin:$PATH
 
